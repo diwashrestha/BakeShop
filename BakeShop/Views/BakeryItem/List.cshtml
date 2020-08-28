@@ -1,0 +1,16 @@
+﻿
+
+<div>
+    <h2>All the product are shown here</h2>
+</div>
+<h2>@Model.CurrentCategory</h2>
+
+@{
+    foreach(var bakeryitem in Model.BakeryItems)
+    {
+        <div>
+            <h4>Drink Name: @bakeryitem.Name</h4>
+            <p>Price: @bakeryitem.Price.ToString("c")</p>
+        </div>
+    }
+}
