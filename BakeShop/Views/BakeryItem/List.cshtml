@@ -8,9 +8,17 @@
 @{
     foreach(var bakeryitem in Model.BakeryItems)
     {
-        <div>
-            <h4>Drink Name: @bakeryitem.Name</h4>
-            <p>Price: @bakeryitem.Price.ToString("c")</p>
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="img-thumbnail">
+                <img src="@bakeryitem.ImageThumbnailUrl" alt=""/>
+                <div class="caption">
+                    <h3 class="pull-right">@bakeryitem.Price.ToString("c")</h3>
+                    <h3>
+                        <a>@bakeryitem.Name</a>
+                    </h3>
+                    <p>@bakeryitem.ShortDescription</p>
+                </div>
+            </div>
         </div>
     }
 }
