@@ -6,19 +6,8 @@
 <h2>@Model.CurrentCategory</h2>
 
 @{
-    foreach(var bakeryitem in Model.BakeryItems)
+    foreach(BakeryItem bakeryitem in Model.BakeryItems)
     {
-        <div class="col-sm-4 col-lg-4 col-md-4">
-            <div class="img-thumbnail">
-                <img src="@bakeryitem.ImageThumbnailUrl" alt=""/>
-                <div class="caption">
-                    <h3 class="pull-right">@bakeryitem.Price.ToString("c")</h3>
-                    <h3>
-                        <a>@bakeryitem.Name</a>
-                    </h3>
-                    <p>@bakeryitem.ShortDescription</p>
-                </div>
-            </div>
-        </div>
+        @Html.Partial("BakeryItemsSummary", bakeryitem)
     }
 }
