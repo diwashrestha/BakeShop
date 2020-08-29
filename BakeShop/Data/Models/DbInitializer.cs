@@ -151,7 +151,7 @@ namespace BakeShop.Data.Models
                     },
                     new BakeryItem
                     {
-                        Name = "Chocolate doughnut",
+                        Name = "Chocolate Doughnut",
                         Price = 10.95M,
                         ShortDescription = "The best Chocolate doughnut",
                         Longdescription = "This category includes both baked (think cheese cake or flourless chocolate) or unbaked (like mousse or unbaked cheesecakes) varieties. Typically very rich because of the high fat content, these cakes may or may not have a bottom crumb crust.",
@@ -429,10 +429,10 @@ namespace BakeShop.Data.Models
                         ShortDescription = "The best Bum Bread",
                         Longdescription = "This category includes both baked (think cheese cake or flourless chocolate) or unbaked (like mousse or unbaked cheesecakes) varieties. Typically very rich because of the high fat content, these cakes may or may not have a bottom crumb crust.",
                         Category = Categories["Bread"],
-                        ImageUrl = "https://github.com/diwashrestha/BakeShop/blob/master/BakeShop/wwwroot/Images/BakeShop/bum_3.png?raw=true",
+                        ImageUrl = "https://github.com/diwashrestha/BakeShop/blob/master/BakeShop/wwwroot/Images/BakeShop/bread_2.png?raw=true",
                         InStock = true,
                         IsPreferredBakeryitem = false,
-                        ImageThumbnailUrl = "https://github.com/diwashrestha/BakeShop/blob/master/BakeShop/wwwroot/Images/BakeShop/bum_3.png?raw=true"
+                        ImageThumbnailUrl = "https://github.com/diwashrestha/BakeShop/blob/master/BakeShop/wwwroot/Images/BakeShop/bread_2.png?raw=true"
 
                     },
                     new BakeryItem
