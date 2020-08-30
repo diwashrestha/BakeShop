@@ -20,7 +20,7 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom shadow-sm fixed-top" role="navigation">
+    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom shadow-sm" role="navigation">
         <div class="container">
             <a class="navbar-brand" href="#">BakeShop</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,8 @@
                     <li>
                         <a class="nav-link text-dark" asp-controller="Contact" asp-action="Index">Contact Us</a>
                     </li>
-                    Cart: @await Component.InvokeAsync("ShoppingCartSummary")
+                      @await Component.InvokeAsync("ShoppingCartSummary")
+                    @await Html.PartialAsync("LoginPartial")
                 </ul>
             </div>
         </div>

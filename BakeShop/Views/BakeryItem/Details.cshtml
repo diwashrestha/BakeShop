@@ -13,8 +13,8 @@
                 <!--Text-->
                 <p class="card-text">@Model.Longdescription.</p>
                 <p class="btn btn-group pull-right">
-                    <a asp-controller="Drink" asp-action="List" class="btn btn-default">Show all drinks</a>
-                    <a class="btn btn-success" id="cartButton" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-drinkId="@Model.Bakery">
+                    <a asp-controller="BakeryItem" asp-action="List" class="btn btn-default">Show all drinks</a>
+                    <a class="btn btn-success" id="cartButton" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-drinkId="@Model.BakeryItemId">
                         Add @Model.Name to cart
                     </a>
                 </p>
