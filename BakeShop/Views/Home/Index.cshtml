@@ -1,0 +1,13 @@
+﻿@model HomeViewModel
+
+@Html.Partial("Carousel")
+
+<h2>Special Items of the Week</h2>
+<h4>Clients prederences - just for you!</h4>
+
+<div class="row">
+    @foreach (var bakeryitem in Model.PreferredBakeryItems)
+    {
+        @Html.Partial("BakeryItemsSummary",bakeryitem)
+    }
+</div>

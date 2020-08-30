@@ -4,10 +4,13 @@
     <h2>All the product are shown here</h2>
 </div>
 <h2>@Model.CurrentCategory</h2>
+<div class="container">
+    @{
 
-@{
-    foreach(BakeryItem bakeryitem in Model.BakeryItems)
-    {
-        @Html.Partial("BakeryItemsSummary", bakeryitem)
+        foreach (BakeryItem bakeryitem in Model.BakeryItems)
+        {
+            @Html.Partial("BakeryItemsSummary", bakeryitem)
+        }
     }
-}
+
+</div>

@@ -1,0 +1,58 @@
+﻿@model ShoppingCartViewModel
+
+<div class="row checkoutForm">
+    <h2>Cart</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>BakeryItem</th>
+                <th class="text-right">Price</th>
+                <th class="text-right">Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
+            {
+                <tr><td class="text-center"><img src="@line.BakeryItem.ImageThumbnailUrl" style="width:138px;height:138px;" /></td>
+                    <td class="text-center">@line.Quantity</td>
+                    <td class="text-left">@line.BakeryItem.Name</td>
+                    <td class="text-right">@line.BakeryItem.Price.ToString("c")</td>
+                    <td class="text-right">
+                        @((line.Quantity * line.BakeryItem.Price).ToString("c"))
+                    </td>
+                    <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-drinkId="@line.BakeryItem.BakeryItemId">Remove</a></td>
+                </tr>
+       }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total:</td>
+                <td class="text-right">
+                    @Model.ShoppingCartTotal.ToString("c")
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="text-right">
+        <div class="btn-group ">
+            <a class="btn btn-outline-dark" asp-controller="Order" asp-action="Checkout">Check out</a>
+            <a class="btn-group">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    Add more BakeryItems<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a asp-controller="BakeryItem" asp-action="List" asp-route-category="Cake">Cake</a></li>
+                    <li><a asp-controller="BakeryItem" asp-action="List" asp-route-category="Cookie">Cookie</a></li>
+                    <li><a asp-controller="BakeryItem" asp-action="List" asp-route-category="Cupcake">CupCake</a></li>
+                    <li><a asp-controller="BakeryItem" asp-action="List" asp-route-category="Doughnut">DoughNut</a></li>
+                    <li><a asp-controller="BakeryItem" asp-action="List" asp-route-category="Bread">Bread</a></li>
+                    <li><a asp-controller="BakeryItem" asp-action="List" asp-route-category="Pie">Pie</a></li>
+                </ul>
+            </a>
+        </div>
+    </div>
+</div>

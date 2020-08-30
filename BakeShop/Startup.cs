@@ -35,7 +35,13 @@ namespace BakeShop
             options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
             services.AddTransient<IBakeryItemRepository, BakeryItemRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShoppingCart.GetCart(sp));
             services.AddMvc(option => option.EnableEndpointRouting = false);
+
+            services.AddMemoryCache(); ;
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +53,7 @@ namespace BakeShop
             }
 
             app.UseRouting();
-
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{Id?}");

@@ -15,5 +15,6 @@ namespace BakeShop.Data
 
         public DbSet<BakeryItem> BakeryItems { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
     }
 }
