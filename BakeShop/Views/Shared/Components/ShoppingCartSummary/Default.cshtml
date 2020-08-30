@@ -1,0 +1,10 @@
+﻿@model ShoppingCartViewModel
+
+    <li>
+        <a asp-controller="ShoppingCart">
+            <span class="fa fa-shopping-basket"></span>
+            <span id=" ="cart-status">
+                @Model.ShoppingCart.ShoppingCartItems.Count
+            </span>
+        </a>
+    </li>

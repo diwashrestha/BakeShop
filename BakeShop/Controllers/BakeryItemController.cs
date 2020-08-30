@@ -1,4 +1,5 @@
 ﻿using BakeShop.Data.interfaces;
+using BakeShop.Data.Models;
 using BakeShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,15 +19,51 @@ namespace BakeShop.Controllers
             _bakeryitemRepository = bakeryItemRepository;
         }
 
-        public ViewResult List()
+        // creating different section based on category
+        public ViewResult List(string category)
         {
-            // ViewBag transfers data only controller to view
-            ViewBag.Name = "DotNet, How?";
-            BakeryItemListViewModel vm = new BakeryItemListViewModel();
-            vm.BakeryItems = _bakeryitemRepository.BakeryItems;
-            vm.CurrentCategory = "BakeryItemCategory";
+            string _category = category;
+            IEnumerable<BakeryItem> bakeryitems;
 
-            return View(vm);
+            string currentCategory = string.Empty;
+            if(string.IsNullOrEmpty(category))
+            {
+                bakeryitems = _bakeryitemRepository.BakeryItems.OrderBy(n => n.CategoryId);
+                currentCategory = "All Items";
+            }
+            else
+            {
+                if(string.Equals("Cake",_category,StringComparison.OrdinalIgnoreCase))
+                {
+                    bakeryitems = _bakeryitemRepository.BakeryItems.Where(p => p.Category.CategoryName.Equals("Cake")).OrderBy(p => p.Name);
+                }
+                else if(string.Equals("Cookie", _category, StringComparison.OrdinalIgnoreCase))
+                {
+                    bakeryitems = _bakeryitemRepository.BakeryItems.Where(p => p.Category.CategoryName.Equals("Cookie")).OrderBy(p => p.Name);
+                }
+                else if(string.Equals("Cupcake",_category,StringComparison.OrdinalIgnoreCase))
+                {
+                    bakeryitems = _bakeryitemRepository.BakeryItems.Where(p => p.Category.CategoryName.Equals("Cupcake")).OrderBy(p => p.Name);
+                }
+                else if (string.Equals("Bread", _category, StringComparison.OrdinalIgnoreCase))
+                {
+                    bakeryitems = _bakeryitemRepository.BakeryItems.Where(p => p.Category.CategoryName.Equals("Bread")).OrderBy(p => p.Name);
+                }
+                else if (string.Equals("Pie", _category, StringComparison.OrdinalIgnoreCase))
+                {
+                    bakeryitems = _bakeryitemRepository.BakeryItems.Where(p => p.Category.CategoryName.Equals("Pie")).OrderBy(p => p.Name);
+                }
+                else
+                    bakeryitems = _bakeryitemRepository.BakeryItems.Where(p => p.Category.CategoryName.Equals("Doughnut")).OrderBy(p => p.Name);
+
+                currentCategory = _category;
+            }
+            var bakeryitemListViewModel = new BakeryItemListViewModel
+            {
+                BakeryItems = bakeryitems,
+                CurrentCategory = currentCategory
+            };
+            return View(bakeryitemListViewModel);
         }
     }
 }

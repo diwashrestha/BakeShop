@@ -56,6 +56,7 @@ namespace BakeShop
             app.UseSession();
             app.UseMvc(routes =>
             {
+                routes.MapRoute(name: "categoryFilter", template: "BakeryItem/{action}/{category?}", defaults: new { Controller = "BakeryItem", action = "List" });
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{Id?}");
             });
             DbInitializer.Seed(serviceProvider);
