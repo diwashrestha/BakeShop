@@ -65,5 +65,16 @@ namespace BakeShop.Controllers
             };
             return View(bakeryitemListViewModel);
         }
+
+        public ViewResult Details(int bakeryItemId)
+        {
+            var bakeryitem = _bakeryitemRepository.BakeryItems.FirstOrDefault(d => d.BakeryItemId == bakeryItemId);
+
+            if (bakeryitem == null)
+            {
+                return View("~/Views/Error/Error.cshtml");
+            }
+            return View(bakeryitem);
+        }
     }
 }

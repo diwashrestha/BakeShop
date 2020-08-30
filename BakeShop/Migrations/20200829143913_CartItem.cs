@@ -13,7 +13,7 @@ namespace BakeShop.Migrations
                     ShoppingCartItemId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BakeryItemId = table.Column<int>(nullable: true),
-                    Amount = table.Column<int>(nullable: false),
+                    Quantity = table.Column<int>(nullable: false),
                     ShoppingCartId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
