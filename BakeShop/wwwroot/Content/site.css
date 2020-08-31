@@ -55,6 +55,6 @@ body {
     padding-right: 2em;
 }
 
-.item-name:hover{
-    color: hotpink;
+.bake-item:hover {
+opacity: 0.1;
 }
