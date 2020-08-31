@@ -1,7 +1,7 @@
 ﻿@model ShoppingCartViewModel
 
-    <li>
-        <a asp-controller="ShoppingCart">
+    <li style="margin-right: 1em;">
+        <a class="nav-link text-dark" asp-controller="ShoppingCart">
             <span class="fa fa-shopping-basket"></span>
             <span id=" ="cart-status">
                 @Model.ShoppingCart.ShoppingCartItems.Count
