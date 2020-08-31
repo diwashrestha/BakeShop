@@ -54,3 +54,7 @@ body {
     padding-left: 2em;
     padding-right: 2em;
 }
+
+.item-name:hover{
+    color: hotpink;
+}

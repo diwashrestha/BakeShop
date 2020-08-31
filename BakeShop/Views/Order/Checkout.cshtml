@@ -1,7 +1,7 @@
 ﻿@model Order
 
 <div class="container">
-    <h3>You are just one step away from ordering your bakery items.</h3>
+    <h3 style="font-family: 'Alata', sans-serif;">You are just one step away from ordering your bakery items.</h3>
     <div asp-validation-summary="All"></div>
     <form asp-action="Checkout" method="post" class="form-horizontal" role="form">
         <div class="form-group">
@@ -59,13 +59,13 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
         </div>
+        <a
         <div class="form-group">
-            <div class="btn-group col-md-offset-2 col-md-8">
-                <input class="btn btn-success" type="submit" value="Complete order" />
+            <div class="btn">
+                <input class="btn btn-light border-dark" type="submit" value="Complete order" />
                 @*<input class="btn btn-default" type="submit" value="Return " />*@
             </div>
         </div>
-
 
     </form>
 </div>

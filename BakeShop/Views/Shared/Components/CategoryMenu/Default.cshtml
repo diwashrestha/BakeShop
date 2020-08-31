@@ -1,18 +1,18 @@
-﻿<li class="nav-item dropdown">
-    <a asp-controller="Drink"
+﻿<li style="margin-right: 1em;" class="nav-item dropdown">
+    <a style="font-family: 'Lato', sans-serif;" asp-controller="BakeryItem"
        asp-action="Index"
        class="nav-link dropdown-toggle" data-toggle="dropdown">Bakery<b class="caret"></b></a>
     <ul class="dropdown-menu">
         @foreach (var category in Model)
         {
             <li>
-                <a class="dropdown-item" asp-controller="BakeryItem" asp-action="List"
+                <a style="font-family: 'Lato', sans-serif;" class="dropdown-item" asp-controller="BakeryItem" asp-action="List"
                    asp-route-category="@category.CategoryName">@category.CategoryName</a>
             </li>
         }
         <li class="dropdown-divider"></li>
         <li>
-            <a class="dropdown-item" asp-controller="BakeryItem" asp-action="List" asp-route-category="">All Items</a>
+            <a style="font-family: 'Lato', sans-serif;" class="dropdown-item" asp-controller="BakeryItem" asp-action="List" asp-route-category="">All Items</a>
         </li>
     </ul>
 </li>

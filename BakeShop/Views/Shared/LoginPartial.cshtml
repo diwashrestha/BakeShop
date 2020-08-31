@@ -8,14 +8,14 @@
     <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm"
           method="post" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
-            <li style="margin-right: 1em;"><a class="nav-link text-dark" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            <li style="margin-right: 1em;"><a style="font-family: 'Lato', sans-serif;" class="nav-link text-dark" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>
     </form>
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li style="margin-right: 1em;"><a class="nav-link text-dark" id="registerLink" asp-controller="Account" asp-action="Register"> Register </a></li>
-        <li style=";margin-right: 1em;"><a class="nav-link text-dark" id="loginLink" asp-controller="Account" asp-action="Login"> Log in </a></li>
+        <li style="margin-right: 1em;"><a style="font-family: 'Lato', sans-serif;" class="nav-link text-dark" id="registerLink" asp-controller="Account" asp-action="Register"> Register </a></li>
+        <li style=";margin-right: 1em;"><a style="font-family: 'Lato', sans-serif;" class="nav-link text-dark" id="loginLink" asp-controller="Account" asp-action="Login"> Log in </a></li>
     </ul>
 }
