@@ -1,6 +1,9 @@
 # 🍪BakeShop🛒
 BakeShop is bakery online shop with different product. User can select the bakery items and add to the carts. Your need to be login to checkout or buy from the bakeshop.
 
+### 🖥Project Demo 
+![BakeShop](https://bakeshop20200903003834.azurewebsites.net/)
+
 ## 💻 Tech Used
 * Asp.Net Core 
 * Sql Server
